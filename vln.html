@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Added to limit the width of the container */
+            margin: auto; /* Added to center the container horizontally */
+            position: relative;
+            height: calc(100% - 40px); /* Adjusted to fit the full height of the viewport */
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            position: absolute; /* Added to position the buttons absolutely */
+        }
+        #yesBtn {
+            left: 20%; /* Adjusted the left position of "Yes" button */
+            bottom: 20px; /* Aligning the "Yes" button to the bottom */
+            width: 100px; /* Setting a fixed width for the "No" button */
+            height: 40px; /* Setting a fixed height for the "No" button */
+        }
+        #noBtn {
+            left: 60%; /* Adjusted the left position of "No" button */
+            bottom: 20px; /* Aligning the "No" button to the bottom */
+            width: 100px; /* Setting a fixed width for the "No" button */
+            height: 40px; /* Setting a fixed height for the "No" button */
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Will You Be My Valentine?</h1>
+        <button id="yesBtn" onclick="alert('I LOVE YOU SRISHTI CHAWLA')">Yes</button>
+        <button id="noBtn" onclick="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            var noButton = document.getElementById('noBtn');
+            var container = document.getElementById('container');
+            var maxX = container.clientWidth - noButton.offsetWidth;
+            var maxY = container.clientHeight - noButton.offsetHeight;
+            var newX = Math.random() * maxX;
+            var newY = Math.random() * maxY;
+            noButton.style.left = newX + 'px';
+            noButton.style.top = newY + 'px';
+        }
+    </script>
+</body>
+</html>
